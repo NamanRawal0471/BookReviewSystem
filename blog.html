@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Blog Page</title>
+  <style>
+    /* General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Header Styles */
+header {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Main Styles */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.blog-post {
+  margin-bottom: 30px;
+}
+
+.blog-post h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.blog-post p {
+  margin-bottom: 15px;
+}
+
+.slider {
+  text-align: center;
+}
+
+.slider h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.swiper-slide {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.swiper-slide a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #4CAF50;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Blogs Styles */
+#blogs {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.blogs-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.blogs-slider .swiper-wrapper {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.blogs-slider .swiper-slide {
+  flex: 0 0 300px;
+  margin-right: 20px;
+}
+
+.blogs-slider .box {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.blogs-slider .box .image img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.blogs-slider .box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.blogs-slider .box p {
+  margin-bottom: 15px;
+}
+
+.blogs-slider .box .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.blogs-slider .box .btn:hover {
+  background-color: #449963;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Add your header content here -->
+    <h1>Sample Blog</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">About</a></li>
+        <li><a href="index.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="blog-post">
+      <h2>Sample Blog Post</h2>
+      <p>This is a sample blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut quam nunc. Mauris at nisl felis. Phasellus hendrerit dui vitae justo pellentesque, in placerat nunc suscipit. Fusce at diam a neque sollicitudin convallis vitae id dolor.</p>
+      <p>Nullam et metus ac nulla porttitor volutpat sed eu mi. Nullam ut nulla id urna fringilla hendrerit. Mauris elementum luctus vestibulum. Nam scelerisque neque et nunc laoreet, nec tincidunt ipsum congue. Mauris non congue urna.</p>
+    </section>
+
+    <section class="blogs" id="blogs">
+      <h1 class="heading"><span>Our Blogs</span></h1>
+      <div class="swiper blogs-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <div class="image">
+              <img src="blog-1.jpg" alt="">
+            </div>
+            <div class="content">
+              <h3>Discovering New Worlds</h3>
+              <p>Explore the joy of diving into new literary universes.</p>
+              <a href="blog.html" class="btn">Read More</a>
+            </div>
+          </div>
+          <div class="swiper-slide box">
+            <div class="image">
+              <img src="blog-3.jpg" alt="">
+            </div>
+            <div class="content">
+              <h3>The Power of Words</h3>
+              <p>Uncover the profound impact of words in shaping our lives.</p>
+              <a href="blog.html" class="btn">Read More</a>
+            </div>
+          </div>
+          <div class="swiper-slide box">
+            <div class="image">
+              <img src="blog-3.jpg" alt="">
+            </div>
+            <div class="content">
+              <h3>Journey Through Classics</h3>
+              <p>Embark on a nostalgic journey through timeless literary classics.</p>
+              <a href="blog.html" class="btn">Read More</a>
+            </div>
+          </div>
+          <div class="swiper-slide box">
+            <div class="image">
+              <img src="blog-4.jpg" alt="">
+            </div>
+            <div class="content">
+              <h3>Reading for Personal Growth</h3>
+              <p>Discover how books can inspire personal transformation and growth.</p>
+              <a href="blog.html" class="btn">Read More</a>
+            </div>
+          </div>
+          <div class="swiper-slide box">
+            <div class="image">
+              <img src="blog-5.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>The Joy of Book Collecting</h3>
+                <p>Explore the thrill and satisfaction of building your own book collection.</p>
+                <a href="blog.html" class="btn">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  
+    <footer>
+      <!-- Add your footer content here -->
+      <p>&copy; 2023 Sample Blog. All rights reserved.</p>
+    </footer>
+  
+    <!-- Add your JavaScript code here if needed -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.blogs-slider', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+  </body>
+  </html>
+  

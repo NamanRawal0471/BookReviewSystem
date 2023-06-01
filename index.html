@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Online Boot Store Website Design Tutorial</title>
+    <link rel="stylesheet" href="path/to/swiper.min.css">
+    <script src="path/to/swiper.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Importing Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Georgia&family=Arial&display=swap');
+    
+        /* Styling for the container */
+        .container1 {
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: stretch; /* Align items to stretch vertically */
+        }
+        .home-articles {
+  margin-top: 20px;
+}
+
+#myInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  border: none;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+}
+
+#myUL li {
+  margin-bottom: 10px;
+}
+
+#myUL li a {
+  text-decoration: none;
+  color: #333;
+}
+
+#myUL li a:hover {
+  color: #ff5500;
+}
+
+#myUL li.hidden {
+  display: none;
+}
+
+        /* Styling for the left section */
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url("https://i.pinimg.com/736x/0f/dd/bb/0fddbb29b7afc05e214c4d04b985af55.jpg");
+            background-size: cover;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+        color: white;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+    
+        /* Styling for the right section */
+        .right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url("https://i.pinimg.com/originals/de/09/43/de094346e683318f07292120bda97bbc.jpg");
+            background-size: cover;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+    
+        /* Styling for the button */
+        .button {
+            background-color: #4CAF50; /* Darker green */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .button:hover {
+            background-color: #45A049; /* Slightly lighter green on hover */
+        }
+    
+        /* Styling for the dictionary */
+        .dictionary {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+    
+        .dictionary label {
+            font-size: 18px;
+            margin-bottom: 10px; 
+            background-color: rgba(0, 0, 0, 0.2);
+        color: white;/* Darker green */
+        }
+    
+        .dictionary input[type="text"] {
+            width: 200px;
+            padding: 5px;
+            font-size: 16px;
+        }
+    
+        .dictionary button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .dictionary button:hover {
+            background-color: #45A049; /* Slightly lighter green on hover */
+        }
+    
+        .definition {
+            margin-top: 20px;
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.2);
+        color: white; /* Darker green */
+        }
+    
+        .green-bg {
+            background-color: #4CAF50; /* Darker green */
+            color: white;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        #subscribe-message {
+  display: none;
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#subscribe-message.success {
+  background-color: #c5e1a5;
+  color: #2e7d32;
+}
+
+#subscribe-message.error {
+  background-color: #ffcdd2;
+  color: #c62828;
+}
+
+.book-recommender {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.book-recommender .content {
+  flex: 1 1 300px;
+  padding: 20px;
+}
+
+.book-recommender .content h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.book-recommender .content h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.book-recommender .content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.book-recommender .content .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #f8b500;
+  color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.book-recommender .content .btn:hover {
+  background-color: #e08c00;
+}
+
+.book-recommender .image {
+  flex: 1 1 300px;
+  padding: 20px;
+}
+
+.book-recommender .image img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .book-recommender .content,
+  .book-recommender .image {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
+
+
+
+
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .container1 {
+                flex-direction: column;
+            }
+            .left-section, .right-section {
+                flex: 1;
+                height: 50vh;
+                width: 100%;
+            }
+        }
+       
+
+    </style>
+</head>
+
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <div class="header-1">
+
+        <a href="index.html" class="logo"> <i class="fas fa-book"></i> bookly </a>
+
+        <div class="home-articles max-width-1 m-auto font2">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Articles.." title="Type in a name">
+          
+            <ul id="myUL">
+              <li class="hidden"><a href="book1.html" target="_blank">Harry Potter and the Goblet of Fire</a></li>
+              <li class="hidden"><a href="book2.html" target="_blank">Harry Potter and the Prisoner of Azkaban</a></li>
+              <li class="hidden"><a href="book3.html" target="_blank">The Lord of the Rings: The Fellowship of the Ring</a></li>
+              <li class="hidden"><a href="book4.html" target="_blank">His Dark Materials: The Golden Compass</a></li>
+              <li class="hidden"><a href="book5.html" target="_blank">Nineteen Eighty Four: George Orwell</a></li>
+              <li class="hidden"><a href="book6.html" target="_blank">DA VINCI CODE</a></li>
+            </ul>
+          
+            <!-- Rest of the content -->
+          </div>
+          
+        
+        
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            
+            
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+
+    </div>
+
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#featured">featured</a>
+            <a href="#arrivals">arrivals</a>
+            <a href="#reviews">reviews</a>
+            <a href="#blogs">blogs</a>
+        </nav>
+    </div>
+
+</header>
+   
+
+<!-- header section ends -->
+
+<!-- bottom navbar  -->
+
+<nav class="bottom-navbar">
+    <a href="#home" class="fas fa-home"></a>
+    <a href="#featured" class="fas fa-list"></a>
+    <a href="#arrivals" class="fas fa-tags"></a>
+    <a href="#reviews" class="fas fa-comments"></a>
+    <a href="#blogs" class="fas fa-blog"></a>
+</nav>
+
+<!-- login form  -->
+
+<div class="login-form-container">
+    <div id="close-login-btn" class="fas fa-times"></div>
+    <form id="login-form" action="login.php" method="post" >
+        <h3>Sign In</h3>
+        <span>E-Mail</span>
+        <input type="email" name="email"  class="box" placeholder="Enter your email" required>
+        <span>Password</span>
+        <input type="password" name="password" class="box" placeholder="Enter your password" required>
+        <div class="checkbox">
+            <input type="checkbox" name="remember_me" value="r" id="remember-me">
+            <label for="remember-me"> Remember me</label>
+        </div>
+        <input type="submit" value="Sign In" class="btn">
+        <p>Forgot password? <a href="#">Click here</a></p>
+        <p>Don't have an account? <a href="#">Create one</a></p>
+    </form>
+</div>
+
+<!-- <script>
+    
+//     document.getElementById('login-form').addEventListener('submit', function(event) {
+//         event.preventDefault(); // Prevent the form from submitting
+
+//         // Get form inputs
+//         var emailInput = document.getElementsByName('email')[0];
+//         var passwordInput = document.getElementsByName('password')[0];
+
+//         // Perform validation
+//         var isValid = validateForm(emailInput.value, passwordInput.value);
+
+//         // Display appropriate message
+//         if (isValid) {
+//             alert('Login successful'); // Replace with your desired success message
+//         } else {
+//             alert('Invalid email or password'); // Replace with your desired error message
+//         }
+//     });
+
+//     function validateForm(email, password) {
+//         // Perform your validation logic here
+//         // You can use regular expressions or any other method to validate the email and password
+//         // Return true if the email and password are valid, false otherwise
+
+//         // Example validation (email should contain '@' and password should be at least 6 characters)
+//         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//         var passwordMinLength = 6;
+
+//         return emailRegex.test(email) && password.length >= passwordMinLength;
+//     }
+// </script> -->
+
+
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+    <div class="row">
+        <div class="content">
+            <h3>Welcome to Book Review Hub</h3>
+            <p>Discover honest and insightful book reviews from passionate readers. Explore a wide range of genres and find your next captivating read.</p>
+        </div>
+
+        <div class="swiper books-slider">
+            <div class="swiper-wrapper">
+                <a href="book2.html" target="_blank" class="swiper-slide"><img src="book-1.png" alt=""></a>
+                <a href="book1.html" target="_blank" class="swiper-slide"><img src="book-2.png" alt=""></a>
+                <a href="book3.html" target="_blank" class="swiper-slide"><img src="book-3.png" alt=""></a>
+                <a href="book4.html" target="_blank" class="swiper-slide"><img src="book-4.png" alt=""></a>
+                <a href="book6.html" target="_blank" class="swiper-slide"><img src="book-5.png" alt=""></a>
+                <a href="book5.html" target="_blank" class="swiper-slide"><img src="book-6.png" alt=""></a>
+            </div>
+            <img src="stand.png" class="stand" alt="">
+        </div>
+    </div>
+</section>
+
+<!-- home section ense  -->
+
+<!-- Features section starts -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-star"></i>
+        <div class="content">
+            <h3>Expert Book Reviews</h3>
+            <p>Discover in-depth book reviews written by industry experts, helping you make informed reading choices.</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-lightbulb"></i>
+        <div class="content">
+            <h3>Personalized Recommendations</h3>
+            <p>Receive personalized book recommendations based on your reading preferences and interests.</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-puzzle-piece"></i>
+        <div class="content">
+            <h3>Personality Quiz</h3>
+            <p>Take our fun and insightful personality quiz to discover book recommendations tailored to your preferences.</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-book"></i>
+        <div class="content">
+            <h3>Interactive Dictionary</h3>
+            <p>Explore our interactive dictionary to enhance your reading experience with detailed definitions and explanations.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- Features section ends -->
+
+<!-- featured section starts  -->
+
+<section class="featured" id="featured">
+
+    <h1 class="heading"> <span>featured books</span> </h1>
+
+    <div class="swiper featured-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="book-1.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <a href="book2.html" target="_blank" class="btn">Add Review</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="book-2.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <a href="book1.html" target="_blank" class="btn">Add Review</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="book-3.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <a href="book3.html" target="_blank" class="btn">Add Review</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="book-4.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <a href="book4.html" target="_blank" class="btn">Add Review</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="book-5.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <a href="book6.html" target="_blank" class="btn">Add Review</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="book-6.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <a href="book5.html" target="_blank" class="btn">Add Review</a>
+                </div>
+            </div>
+
+           
+            
+        </div>
+
+       
+    </div>
+
+</section>
+
+<!-- featured section ends -->
+
+
+
+
+
+<section class="container1">
+    <div class="left-section">
+        <h1 style="font-family: 'Georgia', serif; font-size: 36px;">Discover Personality Books</h1><Br>
+        <p style="font-family: 'Arial', sans-serif;">Explore a collection of personality books tailored for you!</p><Br>
+        <a href="book-recommender-system.html" class="button">Get Book Recommendations</a>
+        <p style="font-size: 24px;">📚🌟</p>
+    </div>
+    <div class="right-section">
+        <h1 style="font-family: 'Georgia', serif; font-size: 36px;">My Dictionary</h1>
+        <div class="dictionary">
+            <label for="word-input">Enter a word:</label>
+            <input type="text" id="word-input" name="word-input">
+            <button onclick="getDefinition()">Search</button>
+            <div id="definition"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+  function getDefinition() {
+    const word = document.getElementById("word-input").value;
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=04e8ec55-73fb-47d9-a4ee-6edeb23bc994`);
+    xhr.send();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                const definition = response[0].shortdef[0];
+                document.getElementById("definition").innerHTML = `
+                    <div class="word">${word}</div>
+                    <div class="definition">${definition}</div>
+                    <div class="green-bg">Source: Merriam-Webster Dictionary</div>
+                `;
+            } else {
+                document.getElementById("definition").innerHTML = "Sorry, the definition for the word could not be found.";
+            }
+        }
+    }
+}
+
+
+
+  </script>
+<!-- newsletter section starts -->
+
+<section class="newsletter">
+
+    <form id="newsletter-form">
+        <h3>subscribe for latest updates</h3>
+        <input type="email" name="email" placeholder="enter your email" id="email-input" class="box">
+        <input type="submit" value="subscribe" class="btn">
+    </form>
+
+    <div id="subscribe-message" style="display: none;"></div>
+
+    <script>
+        document.getElementById("newsletter-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            var emailInput = document.getElementById("email-input");
+            var email = emailInput.value;
+
+            if (validateEmail(email)) {
+                displaySubscribeMessage("Successfully subscribed to the newsletter!");
+                // You can perform additional actions here, such as sending the email to a server for processing
+            } else {
+                displaySubscribeMessage("Please enter a valid email address.");
+            }
+        });
+
+        function validateEmail(email) {
+            // Basic email validation using regular expression
+            var regex = /\S+@\S+\.\S+/;
+            return regex.test(email);
+        }
+
+        function displaySubscribeMessage(message) {
+            var messageDiv = document.getElementById("subscribe-message");
+            messageDiv.textContent = message;
+            messageDiv.style.display = "block";
+        }
+    </script>
+
+</section>
+
+<!-- newsletter section ends -->
+
+<section class="arrivals" id="arrivals">
+    <h1 class="heading"><span>New Arrivals</span></h1>
+    <div class="swiper arrivals-slider">
+        <div class="swiper-wrapper">
+            <a href="book2.html" target="_blank" class="swiper-slide box">
+                <div class="image">
+                    <img src="book-1.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Book Title 1</h3>
+                    <div class="price">&#8377; 1,000 <span>&#8377; 500</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+            <a href="book1.html" target="_blank" class="swiper-slide box">
+                <div class="image">
+                    <img src="book-2.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Book Title 2</h3>
+                    <div class="price">&#8377; 1,000 <span>&#8377; 500</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+            <a href="book3.html" target="_blank" class="swiper-slide box">
+                <div class="image">
+                    <img src="book-3.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Book Title 3</h3>
+                    <div class="price">&#8377; 1,200 <span>&#8377; 800</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+            <a href="book4.html" target="_blank" class="swiper-slide box">
+                <div class="image">
+                    <img src="book-4.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Book Title 4</h3>
+                    <div class="price">&#8377; 800 <span>&#8377; 500</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+            <a href="book5.html" target="_blank" class="swiper-slide box">
+                <div class="image">
+                    <img src="book-6.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Book Title 6</h3>
+                    <div class="price">&#8377; 1,300 <span>&#8377; 900</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+            
+        </div>
+
+        </div>
+        </section>
+        
+
+<!-- deal section starts  -->
+
+<!-- personality-based book recommender section starts -->
+<section class="book-recommender">
+    <div class="content">
+        <h3>Personalized Book Recommendations</h3>
+        <h1>Discover Books That Match Your Personality</h1>
+        <p>Our personality-based book recommender system analyzes your preferences and suggests books tailored to your unique personality traits.</p>
+        <a href="book-recommender-system.html" class="btn">Get Recommendations</a>
+    </div>
+
+    <div class="image">
+        <img src="bookrec.jpg" alt="">
+    </div>
+</section>
+<!-- personality-based book recommender section ends -->
+
+
+
+
+<!-- deal section ends -->
+<section class="reviews" id="reviews">
+    <h1 class="heading"><span>Client's Reviews</span></h1>
+    <div class="swiper reviews-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+                <img src="pic-1.png" alt="">
+                <h3>John Doe</h3>
+                <p>Great website! I found amazing books here.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <img src="pic-2.png" alt="">
+                <h3>Jane Smith</h3>
+                <p>This website is a treasure trove for book lovers!</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <img src="pic-3.png" alt="">
+                <h3>Michael Johnson</h3>
+                <p>Highly recommended! I'm impressed with the book collection.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <img src="pic-4.png" alt="">
+                <h3>Emily Davis</h3>
+                <p>This website helped me discover my new favorite author.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <img src="pic-5.png" alt="">
+                <h3>David Thompson</h3>
+                <p>Impressive selection of genres. I'm spoiled for choice!</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>            <div class="swiper-slide box">
+                <img src="pic-6.png" alt="">
+                <h3>Sarah Wilson</h3>
+                <p>Finally, a website that understands my reading preferences.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blogs" id="blogs">
+    <h1 class="heading"><span>Our Blogs</span></h1>
+    <div class="swiper blogs-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="blog-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Discovering New Worlds</h3>
+                    <p>Explore the joy of diving into new literary universes.</p>
+                    <a href="blog1.html" target="_blank" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="blog-3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>The Power of Words</h3>
+                    <p>Uncover the profound impact of words in shaping our lives.</p>
+                    <a href="blog2.html" target="_blank" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="blog-3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Journey Through Classics</h3>
+                    <p>Embark on a nostalgic journey through timeless literary classics.</p>
+                    <a href="blog3.html" target="_blank" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="blog-4.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Reading for Personal Growth</h3>
+                    <p>Discover how books can inspire personal transformation and growth.</p>
+                    <a href="blog4.html" target="_blank" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="blog-5.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>The Joy of Book Collecting</h3>
+                    <p>Immerse yourself in the world of book collecting and its allure.</p>
+                    <a href="blog5.html" target="_blank" class="btn">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- blogs section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>our locations</h3>
+            <a href="https://www.google.com/maps/place/India" target="_blank"> <i class="fas fa-map-marker-alt"></i> India </a>
+            <a href="https://www.google.com/maps/place/USA" target="_blank"> <i class="fas fa-map-marker-alt"></i> USA </a>
+            <a href="https://www.google.com/maps/place/Russia" target="_blank"> <i class="fas fa-map-marker-alt"></i> Russia </a>
+            <a href="https://www.google.com/maps/place/France" target="_blank"> <i class="fas fa-map-marker-alt"></i> France </a>
+            <a href="https://www.google.com/maps/place/Japan" target="_blank"> <i class="fas fa-map-marker-alt"></i> Japan </a>
+            <a href="https://www.google.com/maps/place/Africa" target="_blank"> <i class="fas fa-map-marker-alt"></i> Africa </a>
+        </div>
+        
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#home"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#featured"> <i class="fas fa-arrow-right"></i> featured </a>
+            <a href="#arrivals"> <i class="fas fa-arrow-right"></i> arrivals </a>
+            <a href="#reviews"> <i class="fas fa-arrow-right"></i> reviews </a>
+            <a href="#blogs"> <i class="fas fa-arrow-right"></i> blogs </a>
+        </div>
+
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="tel:+918750XXXXX"> <i class="fas fa-phone"></i>+91 8750XXXXX </a>
+            <a href="tel:011232XXXXX"> <i class="fas fa-phone"></i>011232XXXXX </a>
+            <a href="mailto:book_review@gmail.com"> <i class="fas fa-envelope"></i>book_review@gmail.com </a>
+            <a href="https://maps.google.com" target="_blank"> <i class="fas fa-map-marker-alt"></i>Visit Us</a>
+            <!-- Replace "https://example.com/location" with your actual location page URL -->
+            <img src="worldmap.png" class="map" alt="">
+        </div>
+        
+        
+    </div>
+
+    <div class="share">
+        <a href="#home" class="fab fa-facebook-f"></a>
+        <a href="#home" class="fab fa-twitter"></a>
+        <a href="#home" class="fab fa-instagram"></a>
+        <a href="#home" class="fab fa-linkedin"></a>
+        <a href="#home" class="fab fa-pinterest"></a>
+    </div>
+
+    <div class="credit"> created by <span>mr. web designer</span> | all rights reserved! </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- loader  -->
+
+<div class="loader-container">
+    <img src="loader-img.gif" alt="">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function myFunction() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName("li");
+
+  // Check if the input length is greater than or equal to 3 before filtering
+  if (filter.length >= 3) {
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].classList.remove("hidden");
+      } else {
+        li[i].classList.add("hidden");
+      }
+    }
+  } else {
+    // If input length is less than 3, hide all results
+    for (i = 0; i < li.length; i++) {
+      li[i].classList.add("hidden");
+    }
+  }
+}
+
+</script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="script.js"></script>
+
+</body>
+</html>

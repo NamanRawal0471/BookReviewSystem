@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Book Recommendation Form</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f2f2f2;
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #006633;
+  font-size: 3rem;
+  margin: 1.5rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+/* Forms */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+select {
+  appearance: none;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+button[type="submit"] {
+  background-color: #004d33;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+  background-color: darken(#004d33, 10%);
+}
+
+/* Question styles */
+.question {
+  background-color: #ffffff;
+  border: 1px solid #006633;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.question p {
+  color: #006633;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Book styles */
+#recommendations-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.book {
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  text-align: center;
+}
+
+.book img {
+  border-radius: 0.25rem;
+  height: auto;
+  margin-bottom: 1rem;
+  max-width: 100%;
+}
+
+.book h2 {
+  color: #006633;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.book p {
+  color: #444;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.book a {
+  background-color: #006633;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.book a:hover {
+  background-color: darken(#006633, 10%);
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Small screens */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  #recommendations-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .book {
+    padding: 1rem;
+  }
+}
+
+/* Medium screens */
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  body {
+    padding: 1.5rem;
+  }
+
+  #recommendations-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+  }
+
+  .book {
+    padding: 1.5rem;
+  }
+}
+
+/* Large screens */
+@media screen and (min-width: 900px) {
+  body {
+    padding: 2rem;
+  }
+
+  #recommendations-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+  }
+
+  .book {
+    padding: 2rem;
+  }
+}
+.pp{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+/* Background images */
+body {
+  background-image: url('https://scontent.fdel72-1.fna.fbcdn.net/v/t1.6435-9/144537296_5305165999501358_2211276915599672429_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=9267fe&_nc_ohc=FIwNnfBFvMAAX-zYqG9&_nc_ht=scontent.fdel72-1.fna&oh=00_AfCq5_Cylaosp6IWdRC_ULU1_vVRc77sXbKHT30Bzvl8ZQ&oe=6484088C');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+</style>
+</head>
+<body>
+	<h1 class="pp1">Book Recommendation Form</h1>
+	<p class="pp">Please answer the following questions to get a personalized book recommendation:</p>
+	<form id="personality-form">
+	  <div class="question">
+	    <p>Question 1: When it comes to reading, I prefer...</p>
+	    <label>
+	      <input type="radio" name="q1" value="a">
+	      A book that makes me think deeply
+	    </label>
+	    <label>
+	      <input type="radio" name="q1" value="b">
+	      A book that makes me laugh
+	    </label>
+	    <label>
+	      <input type="radio" name="q1" value="c">
+	      A book that makes me cry
+	    </label>
+	  </div>
+	  <div class="question">
+	    <p>Question 2: What type of protagonist do you prefer?</p>
+	    <label>
+	      <input type="radio" name="q2" value="a">
+	      A protagonist who is relatable and flawed
+	    </label>
+	    <label>
+	      <input type="radio" name="q2" value="b">
+	      A protagonist who is heroic and courageous
+	    </label>
+	    <label>
+	      <input type="radio" name="q2" value="c">
+	      A protagonist who is mysterious and unpredictable
+	    </label>
+	  </div>
+	  <div class="question">
+	    <p>Question 3: How important is the ending of a book to you?</p>
+	    <label>
+	      <input type="radio" name="q3" value="a">
+	      It's the most important part!
+	    </label>
+	    <label>
+	      <input type="radio" name="q3" value="b">
+	      It's important, but not the most important part
+	    </label>
+	    <label>
+	      <input type="radio" name="q3" value="c">
+	      It's not that important to me
+	    </label>
+	  </div>
+	  <div class="question">
+	    <p>Question 4: What is your favorite book genre?</p>
+	    <select id="genre" name="genre">
+	      <option value="fiction">Fiction</option>
+	      <option value="nonfiction">Non-Fiction</option>
+	      <option value="mystery">Mystery</option>
+	      <option value="romance">Romance</option>
+	      <option value="scifi">Sci-Fi</option>
+	    </select>
+	  </div>
+	  <div class="question">
+	    <p>Question 5: How long do you prefer your books to be?</p>
+	    <label>
+	      <input type="radio" name="q4" value="a">
+	      Short and sweet (less than 200 pages)
+	    </label>
+	    <label>
+	      <input type="radio" name="q4" value="b">
+	      Average length (200-400 pages)
+	    </label>
+	    <label>
+	      <input type="radio" name="q4" value="c">
+	      Long and immersive (more than 400 pages)
+	    </label>
+	  </div>
+	  <div class="question">
+	    <p>Question 6: What kind of writing style do you prefer?</p>
+	    <label>
+	      <input type="radio" name="q5" value="a">
+	      Simple and straightforward
+	    </label>
+	    <label>
+	      <input type="radio" name="q5" value="b">
+	      Elegant and poetic</label>
+        <label>
+          <input type="radio" name="q5" value="c">
+          Descriptive and immersive
+        </label>
+      </div>
+      <button type="submit">Get Book Recommendation</button>
+    </form>
+    <div id="response-container"></div>
+<div id="recommendations-container"></div>
+  </body>
+  <script>
+    const form = document.getElementById('personality-form');
+    const responseContainer = document.getElementById('response-container');
+    const recommendationsContainer = document.getElementById('recommendations-container');
+  
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+  
+      const formData = new FormData(event.target);
+  
+      const personality = {
+        q1: formData.get('q1'),
+        q2: formData.get('q2'),
+        q3: formData.get('q3'),
+        genre: formData.get('genre'),
+        q4: formData.get('q4'),
+        q5: formData.get('q5')
+      };
+  
+      const url = 'books.json';
+const options = {
+  method: 'GET'
+};
+
+  
+      responseContainer.textContent = 'Loading...';
+  
+      fetch(url, options)
+        .then(response => response.json())
+        .then(data => {
+          responseContainer.textContent = '';
+          recommendationsContainer.innerHTML = '';
+  
+          data.forEach(book => {
+  const { title, author, description, coverImage } = book;
+
+  const bookElement = document.createElement('div');
+  bookElement.classList.add('book');
+
+  const coverImageElement = document.createElement('img');
+  coverImageElement.src = coverImage;
+  coverImageElement.alt = `${title} ${author}`;
+    bookElement.appendChild(coverImageElement);
+
+  const titleElement = document.createElement('h2');
+  titleElement.textContent = title;
+  bookElement.appendChild(titleElement);
+
+  const authorElement = document.createElement('p');
+  authorElement.textContent = `by ${author}`;
+  bookElement.appendChild(authorElement);
+
+  const descriptionElement = document.createElement('p');
+  descriptionElement.textContent = description;
+  bookElement.appendChild(descriptionElement);
+
+  recommendationsContainer.appendChild(bookElement);
+});
+
+        })
+        .catch(error => {
+          responseContainer.textContent = `Error: ${error.message}`;
+          recommendationsContainer.innerHTML = '';
+        });
+    });
+  </script>
+  
+</html>

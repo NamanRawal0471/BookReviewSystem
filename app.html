@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Recommender System</title>
+</head>
+<body>
+    <h1>Book Recommender System</h1>
+    <form action="/recommend" method="POST">
+        <label for="isbn">Enter ISBN:</label>
+        <input type="text" id="isbn" name="isbn" required>
+        <button type="submit">Recommend</button>
+    </form>
+    {% if isbn %}
+        <h2>Recommended Books for ISBN: {{ isbn }}</h2>
+        <ul>
+            {% for book in recommended_books %}
+                <li>{{ book }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

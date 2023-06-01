@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Importing Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Georgia&family=Arial&display=swap');
+
+    /* Styling for the container */
+    .container1 {
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: stretch; /* Align items to stretch vertically */
+    }
+
+    /* Styling for the left section */
+    .left-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url("https://i.pinimg.com/736x/0f/dd/bb/0fddbb29b7afc05e214c4d04b985af55.jpg");
+        background-size: cover;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Styling for the right section */
+    .right-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url("https://i.pinimg.com/originals/de/09/43/de094346e683318f07292120bda97bbc.jpg");
+        background-size: cover;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Styling for the button */
+    .button {
+        background-color: #4CAF50; /* Darker green */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-bottom: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #45A049; /* Slightly lighter green on hover */
+    }
+
+    /* Styling for the dictionary */
+    .dictionary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .dictionary label {
+        font-size: 18px;
+        margin-bottom: 10px; 
+        background-color: rgba(0, 0, 0, 0.2);
+    color: white;/* Darker green */
+    }
+
+    .dictionary input[type="text"] {
+        width: 200px;
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    .dictionary button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .dictionary button:hover {
+        background-color: #45A049; /* Slightly lighter green on hover */
+    }
+
+    .definition {
+        margin-top: 20px;
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 0.2);
+    color: white; /* Darker green */
+    }
+
+    .green-bg {
+        background-color: #4CAF50; /* Darker green */
+        color: white;
+        padding: 5px;
+        font-size: 14px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+        .container1 {
+            flex-direction: column;
+        }
+        .left-section, .right-section {
+            flex: 1;
+            height: 50vh;
+            width: 100%;
+        }
+    }
+</style>
+
+
+</head>
+<body>
+    <div class="container1">
+        <div class="left-section">
+            <h1 style="font-family: 'Georgia', serif; font-size: 36px;">Discover Personality Books</h1>
+            <p style="font-family: 'Arial', sans-serif;">Explore a collection of personality books tailored for you!</p>
+            <a href="personality_books.html" class="button">Get Book Recommendations</a>
+            <p style="font-size: 24px;">📚🌟</p>
+        </div>
+        <div class="right-section">
+            <h1 style="font-family: 'Georgia', serif; font-size: 36px;">My Dictionary</h1>
+            <div class="dictionary">
+                <label for="word-input">Enter a word:</label>
+                <input type="text" id="word-input" name="word-input">
+                <button onclick="getDefinition()">Search</button>
+                <div id="definition"></div>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+      function getDefinition() {
+        const word = document.getElementById("word-input").value;
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=04e8ec55-73fb-47d9-a4ee-6edeb23bc994`);
+        xhr.send();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    const definition = response[0].shortdef[0];
+                    document.getElementById("definition").innerHTML = `
+                        <div class="word">${word}</div>
+                        <div class="definition">${definition}</div>
+                        <div class="green-bg">Source: Merriam-Webster Dictionary</div>
+                    `;
+                } else {
+                    document.getElementById("definition").innerHTML = "Sorry, the definition for the word could not be found.";
+                }
+            }
+        }
+    }
+    
+    
+    
+      </script>
+</body>
+</html>

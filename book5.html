@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Review System</title>
+  <style>
+    /* Reset default margin and padding for all elements */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Apply background colors */
+    body {
+      background-color: #ecf0f1;
+    }
+    
+    header, main, footer {
+      background-color: #002b0c;
+    }
+    
+    .book-details, .book-description, .reviews, .add-review {
+      background-color: #f2f2f1;
+    }
+    
+    /* Style header and navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    nav ul {
+      display: flex;
+    }
+    
+    nav li {
+      list-style: none;
+    }
+    
+    nav li a {
+      display: block;
+      padding: 1rem;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    
+    nav li a:hover {
+      background-color: #0a8f42;
+    }
+    
+    /* Style book details */
+    .book-details {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .book-details img {
+      margin-right: 1rem;
+      max-width: 200px;
+    }
+    
+    .book-details p {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Style book description */
+    .book-description {
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .book-description h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .book-description p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+    
+    /* Style reviews */
+    .reviews {
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .reviews h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .review {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .review h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .review p:first-of-type {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #27ae60;
+      font-weight: bold;
+    }
+    
+    .review p:last-of-type {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+    /* Style add review form */
+    .add-review {
+      padding: 1rem;
+      background-color: #2c3e50;
+      border-radius: 5px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .add-review h2 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    
+    .add-review form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .add-review label {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    
+    .add-review input[type="text"],
+    .add-review select,
+    .add-review textarea {
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 3px;
+      border: none;
+      background-color: #f2f2f2;
+      color: #333;
+      font-size: 1.1rem;
+    }
+    
+    .add-review input[type="submit"] {
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      border-radius: 3px;
+      border: none;
+      background-color: #088e40;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .add-review input[type="submit"]:hover {
+      background-color: #1abc9c;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: center;
+    }
+    
+    
+    h1 {
+      text-align: center;
+    }
+    h1 {
+      color: #057433;
+    }
+    .book-details p {
+      color: #333;
+    }
+    .book-description {
+      text-align: center;
+    }
+    .book-description p {
+      color: #333;
+    }
+    .reviews {
+      text-align: center;
+    }
+    .reviews p {
+      color: #333;
+    }
+    .add-review {
+      text-align: center;
+    }
+    
+    .add-review label {
+      color: white;
+    }
+    .add-review label {
+      color: white;
+    }
+    
+    .book-details img {
+      display: block;
+      margin: 0 auto;
+    }footer {
+          text-align: center;
+        }
+        * {
+          margin: 0;
+          padding: 0;
+        }
+        
+        header {
+          background-color: #27ae60;
+          padding: 20px;
+          text-align: center;
+        }
+        
+        nav {
+          display: flex;
+          justify-content: space-between;
+        }
+        
+        nav ul {
+          list-style: none;
+        }
+        
+        nav li {
+          display: inline-block;
+          margin-right: 10px;
+        }
+        
+        nav li a {
+          color: white;
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+        
+        main {
+          padding: 20px;
+        }
+        
+        h1 {
+          font-size: 2rem;
+          font-weight: bold;
+        }
+        
+        .book-details {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        
+        .book-details img {
+          max-width: 150px;
+        }
+        
+        .book-details p {
+          margin-bottom: 10px;
+        }
+        
+        .book-description {
+          padding: 20px;
+          text-align: justify;
+        }
+        
+        .reviews {
+          padding: 20px;
+        }
+        
+        .review {
+          margin-bottom: 20px;
+        }
+        
+        .review h3 {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+        
+        .review p {
+          margin-bottom: 10px;
+        }
+        
+        .add-review {
+          padding: 20px;
+        }
+        
+        .add-review label {
+          font-size: 1.2rem;
+        }
+        
+        footer {
+          text-align: center;
+        }
+    .book-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    .book-details img {
+      margin-bottom: 1rem;
+      max-width: 200px;
+    }
+    
+    .book-details p {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    
+    
+      </style>
+</head>
+<body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Books</a></li>
+          <li><a href="index.html">Authors</a></li>
+          <li><a href="index.html">Reviews</a></li>
+          <li><a href="index.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+        <h1>Nineteen Eighty-Four</h1>
+  <div class="book-details">
+    <img src="book-6.png" alt="Book cover image">
+    <p>Author: George Orwell</p>
+    <p>Publication Date: June 8, 1949</p>
+    <p>Publisher: Secker & Warburg</p>
+    <p>ISBN-13: 978-0451524935</p>
+  </div>
+
+  <div class="book-description">
+    <h2>Description</h2>
+    <p>Nineteen Eighty-Four is a dystopian novel written by George Orwell. The story is set in a totalitarian society ruled by the Party led by Big Brother. It follows the life of Winston Smith, a low-ranking member of the Party, as he rebels against the oppressive regime and attempts to maintain his individuality and freedom. The novel explores themes of government surveillance, psychological manipulation, and the power of language, leaving readers questioning the nature of truth and the consequences of totalitarianism.</p>
+  </div>
+
+  <div class="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="review">
+      <h3>A Chilling Warning</h3>
+      <p>Reviewer Name - 5 Stars - July 15, 1949</p>
+      <p>Nineteen Eighty-Four is a haunting and thought-provoking novel that serves as a stark reminder of the dangers of unchecked power and totalitarianism. George Orwell's writing is both captivating and deeply unsettling, leaving a lasting impression on readers. A must-read for anyone interested in dystopian literature.</p>
+    </div>
+    <div class="review">
+      <h3>A Disturbing Masterpiece</h3>
+      <p>Reviewer Name - 5 Stars - August 1, 1949</p>
+      <p>George Orwell's Nineteen Eighty-Four is a literary masterpiece that delves into the darkest aspects of human nature and the implications of a society governed by surveillance and manipulation. The novel's themes are as relevant today as they were when it was first published, making it a timeless and essential work.</p>
+    </div>
+    <!-- Add more reviews here -->
+  </div>
+          <!-- Add more reviews here -->
+        
+        
+    <!-- Add more reviews here -->
+    <section class="add-review">
+        <h2>Add a Review</h2>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name"><br>
+      
+          <label for="rating">Rating:</label>
+          <select id="rating" name="rating">
+            <option value="5">5 stars</option>
+            <option value="4">4 stars</option>
+            <option value="3">3 stars</option>
+            <option value="2">2 stars</option>
+            <option value="1">1 star</option>
+          </select><br>
+      
+          <label for="review-title">Review Title:</label>
+          <input type="text" id="review-title" name="review-title"><br>
+      
+          <label for="review-text">Review:</label><br>
+          <textarea id="review-text" name="review-text" rows="4" cols="50"></textarea><br>
+      
+          <input type="submit" value="Submit">
+        </form>
+      </section>
+      
+    </div>
+    
+      </main>
+      <footer>
+        <p>Book Review System &copy; 2023</p>
+      </footer>
+      <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the form from submitting
+      
+          // Get form input values
+          var name = document.getElementById('name');
+          var rating = document.getElementById('rating');
+          var reviewTitle = document.getElementById('review-title');
+          var reviewText = document.getElementById('review-text');
+      
+          // Check if all fields are filled
+          if (name.value && rating.value && reviewTitle.value && reviewText.value) {
+            // Simulate verification process
+            setTimeout(function() {
+              alert("Review submitted for verification!");
+      
+              // Reset form fields
+              name.value = '';
+              rating.value = '';
+              reviewTitle.value = '';
+              reviewText.value = '';
+      
+              // Uncomment the line below to submit the form
+              // event.target.submit();
+            }, 2000);
+          } else {
+            alert("Please fill in all the fields.");
+          }
+        });
+      </script>
+      
+      
+    </body>
+    </html>
+    
+    
+    
+    
+    
+    

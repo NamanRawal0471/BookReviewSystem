@@ -1,0 +1,21 @@
+[
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "description": "The story of the mysteriously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan, of lavish parties on Long Island at a time when The New York Times noted \"gin was the national drink and sex the national obsession,\" it is an exquisitely crafted tale of America in the 1920s.",
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/I/81BOpG-JYwL.jpg"
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "description": "A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a South poisoned by virulent prejudice, it views a world of great beauty and savage inequities through the eyes of a young girl, as her father—a crusading local lawyer—risks everything to defend a black man unjustly accused of a terrible crime.",
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/I/91zj5rYvY2L.jpg"
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "description": "In one of the most universally loved and admired English novels, a country squire of no great means must marry off his five vivacious daughters. Jane Austen's art transformed this effervescent tale of rural romance into a witty, shrewdly observed satire of English country life.",
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/I/51JiMjKxZnL._SX324_BO1,204,203,200_.jpg"
+    }
+  ]
+  
