@@ -275,7 +275,7 @@
         <a href="index.html" class="logo"> <i class="fas fa-book"></i> bookly </a>
 
         <div class="home-articles max-width-1 m-auto font2">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Articles.." title="Type in a name">
+            
           
             <ul id="myUL">
               <li class="hidden"><a href="book1.html" target="_blank">Harry Potter and the Goblet of Fire</a></li>
@@ -442,6 +442,35 @@
     </div>
 
 </section>
+
+<div class="container">
+    <h1>Book Review Section</h1>
+    <div id="book-info">
+      <input type="text" id="book-input" placeholder="Enter a book title">
+      <button onclick="fetchBooks()">Search</button>
+    </div>
+    <div id="book-grid"></div>
+    <div id="review-section">
+      <h2>Write a Review</h2>
+      <input type="text" id="review-input" placeholder="Enter your review">
+      <input type="number" id="rating-input" min="1" max="5" placeholder="Rating (1-5)">
+      <button onclick="addReview()">Submit</button>
+      <ul id="review-list"></ul>
+    </div>
+  </div>
+
+  <div id="bookModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-book-details"></div>
+      <ul id="modal-review-list"></ul>
+      <div class="review-inputs">
+        <input type="text" id="modal-review-input" placeholder="Enter your review">
+        <input type="number" id="modal-rating-input" min="1" max="5" placeholder="Rating (1-5)">
+        <button onclick="addModalReview()">Submit</button>
+      </div>
+    </div>
+  </div>
 
 <!-- Features section ends -->
 

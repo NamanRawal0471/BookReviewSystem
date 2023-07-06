@@ -9,7 +9,181 @@
     --border-hover:.1rem solid var(--black);
     --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
 }
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Lato', sans-serif;
+  }
 
+  h1,
+  h2 {
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  #book-info,
+  #review-section {
+    margin-top: 20px;
+  }
+
+  #book-details {
+    margin-top: 20px;
+  }
+
+  #book-details img {
+    max-width: 200px;
+    margin: 10px auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #review-list {
+    list-style-type: none;
+    margin-top: 20px;
+    padding: 0;
+    text-align: left;
+  }
+
+  #review-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  button {
+    margin-top: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: 'Arial', sans-serif;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .review-inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .review-inputs input[type="text"],
+  .review-inputs input[type="number"] {
+    width: 45%;
+  }
+
+  .review-inputs button {
+    width: 30%;
+  }
+
+  .review-list-item {
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+background-color: rgba(255, 255, 255, 0.9);
+box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+/* Add the following line */
+list-style-type: none;
+}
+
+
+  .review-list-item p {
+    margin-bottom: 5px;
+  }
+
+  .review-list-item .rating-stars {
+    color: orange;
+  }
+
+  .review-list-item .rating-stars::before {
+    content: '⭐️';
+  }
+
+  /* Responsive Styles */
+
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+
+    #book-details img {
+      max-width: 150px;
+    }
+
+    .review-inputs {
+      flex-direction: column;
+    }
+
+    .review-inputs input[type="text"],
+    .review-inputs input[type="number"],
+    .review-inputs button {
+      width: 100%;
+    }
+  }
+
+  /* Modal Styles */
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 8px;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .book-card {
+    display: inline-block;
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    vertical-align: top;
+    text-align: center;
+  }
 *{
     font-family: 'Poppins', sans-serif;
     margin:0; padding:0;
